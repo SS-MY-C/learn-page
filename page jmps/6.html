@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            text-align:center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        article{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 100px;
+            box-sizing: border-box;
+            transition: all 1s ease-in-out;
+            top: 0;
+        }
+        #tablet{
+            background:#4ac4aa;
+        }
+        #wifi{
+            background:#34ea3d;
+        }
+        h1{
+            font-size: 4em;
+            border-bottom:1px solid rgba(255,255,255,.2);
+            padding-bottom:30px;
+        }
+        p{
+            color:rgba(255,255,255,.8);
+            margin-bottom:30px;
+        }
+        a{
+            font-size:1.5em;
+            padding:5px 50px;
+            border:1px solid #fff;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        body{
+            perspective:1500px;
+        }
+        article{
+            backface-visibility:hidden;
+        }
+        #tablet{
+            transform:rotateY(0deg) scale(1,1);
+        }
+        #wifi{
+            transform: rotateY(180deg) scale(0,0);
+        }
+        #tablet.move{
+            transform: rotateY(-180deg) scale(0,0);
+        }
+        #wifi.move{
+            transform: rotateY(0deg) scale(1,1);
+        }
+    </style>
+</head>
+<body>
+    <article id="tablet">
+        <img src="4.png" alt="photo">
+        <h1>Comprehensam</h1>
+        <p>Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. </p>
+        <a href="#wifi">Next</a>
+    </article>
+    <article id="wifi">
+        <img src="5.png" alt="wfi">
+        <h1>Adversarium</h1>
+        <p>Lorem ipsum dolor sit amet, cetero inimicus an mei, ea ius viderer saperet iudicabit, in lobortis adversarium ius.</p>
+        <a href="#tablet">Next</a>
+    </article>
+
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('a').click(function(e){
+                e.preventDefault();
+                $('#tablet').toggleClass('move');
+                $('#wifi').toggleClass('move');
+            });
+        });
+    </script>
+</body>
+</html>

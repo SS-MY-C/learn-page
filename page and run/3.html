@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .run{
+        width:200px;
+        height:180px;
+        background: url(run.png) no-repeat;
+    }
+    @keyframes run{
+        0%,100%{
+            background-position:0 0;
+        }
+        12.5%{
+            background-position:-200px 0;
+        }
+        25%{
+            background-position:-400px 0;
+        }
+        37.5%{
+            background-position:-600px 0;
+        }
+        50%{
+            background-position: -800px 0;
+        }
+        62.5%{
+            background-position:-1000px 0 ;
+        }
+        75%{
+            background-position: -1200px;
+        }
+        87.5%{
+            background-position:-1400px 0;
+        }
+    }
+    .run{
+        animation:run 1s steps(1) infinite;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="run"></div>
+</body>
+</html>
